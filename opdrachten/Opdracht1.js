@@ -24,6 +24,8 @@ export default function Opdracht1() {
         OPDRACHT E:
         Plaats een nieuwe afbeelding in de assets/images-opdracht-1/ folder,
         Toon deze afbeelding ook op het scherm met een andere width en height
+        OPDRACHT F:
+        Verander flexDirection in styles.mainContainer van 'column' naar 'row', wat veranderd er?
         */}
         <Text>Opdracht 1: Afbeeldingen</Text>
       </View>
