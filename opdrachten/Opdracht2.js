@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-
+import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import Pic from'../assets/images-opdracht-1/ah.png'
 
 export default function Opdracht2() {
     /* 
@@ -14,21 +14,47 @@ export default function Opdracht2() {
    let pressScore = 0
    let greenPressScore = 0
    let redPressScore = 0
+   let bluePressScore = 0
+
    let addPress = () => {
     pressScore++
     alert(`Je hebt al ${pressScore} keer geklikt!`)
+   }
+   let addBluePress = () => {
+    bluePressScore++
+    alert(`Je hebt al ${bluePressScore} keer op blauw geklikt!`)
    }
    let addGreenPress = () => {
     greenPressScore++
     alert(`Je hebt al ${greenPressScore} keer op groen geklikt!`)
    }
+   let addRedPress = () => {
+     redPressScore++
+     alert(`Je hebt al ${redPressScore} keer op rood geklikt!`)
+   }
     return (
       <View style={styles.mainContainer}>
         <Text>Opdracht 2: onPress()</Text>
         <TouchableOpacity
-        onPress={() => addPress()}
-        style={styles.alertButton}>
+        onPress={() => addBluePress()}
+        style={styles.alertButtonOne}>
+        <Text>HAH</Text>
         <Text style={styles.buttonText}>Klik mij!</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => addGreenPress()}
+        style={styles.alertButtonTwo}>
+        <Text style={styles.buttonText}>Klik mij!</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => addRedPress()}
+        style={styles.alertButtonThree}>
+        <Text style={styles.buttonText}>Klik mij!</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => addPress()} >
+        <Image source={Pic} style={styles.myPic} />
       </TouchableOpacity>
       {/*
       OPDRACHT A:
@@ -53,7 +79,7 @@ export default function Opdracht2() {
       alignItems: 'center',
       justifyContent: 'center',
     },
-    alertButton: {
+    alertButtonOne: {
       backgroundColor: 'blue',
       padding: 5,
       borderRadius: 10,
@@ -61,5 +87,18 @@ export default function Opdracht2() {
     buttonText: {
       fontSize: 20,
       color: '#fff'
-    }
+    },
+    alertButtonTwo:{
+      backgroundColor: 'green',
+      padding: 5,
+      borderRadius: 10
+    },
+    alertButtonThree:{
+      backgroundColor: 'red',
+      padding: 5,
+      borderRadius: 10
+    },
+    myPic: {
+      width: 300, 
+      height: 300 }
   });

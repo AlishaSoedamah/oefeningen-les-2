@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-
+import { Text, View, StyleSheet, Image } from 'react-native';
+import Logo from'../assets/images-opdracht-1/ROCA_logo.png'
+import Pic from'../assets/images-opdracht-1/ah.png'
 export default function Opdracht1() {
   /* 
   Tijdens de vorige les heb je geleerd hoe je Text en View components op je scherm laat zien.
@@ -28,6 +29,8 @@ export default function Opdracht1() {
         Verander flexDirection in styles.mainContainer van 'column' naar 'row', wat veranderd er?
         */}
         <Text>Opdracht 1: Afbeeldingen</Text>
+        <Image source={Logo} style={styles.logoRoc} />
+        <Image source={Pic} style={styles.myPic} />
       </View>
     );
   }
@@ -35,9 +38,17 @@ export default function Opdracht1() {
   const styles = StyleSheet.create({
     mainContainer: {
       flex: 1,
-      flexDirection: 'column',
+      flexDirection: 'row',
       backgroundColor: '#fff',
       justifyContent: 'center',
       alignItems: 'center',
     },
-  });
+    logoRoc: {
+      width: 305,
+      height: 159 
+    },
+    myPic: {
+      width: 300, 
+      height: 300 }
+    },
+  );
